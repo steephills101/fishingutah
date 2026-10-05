@@ -1,10 +1,10 @@
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Explore Space | Informational Website</title>
+    <title>Utah Fishing Facts</title>
 
     <style>
         * {
@@ -19,25 +19,25 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background: #f3f7f5;
+            color: #1f2933;
             line-height: 1.6;
-            color: #222;
-            background: #f4f7fb;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
         nav {
-            background: #111827;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #12372a;
+            color: white;
             padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         .logo {
-            color: white;
             font-size: 1.4rem;
             font-weight: bold;
         }
@@ -55,150 +55,216 @@
         }
 
         nav a:hover {
-            color: #60a5fa;
+            color: #9ee6b8;
         }
 
-        /* Hero */
+        /* HERO */
         .hero {
-            min-height: 70vh;
+            min-height: 75vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 40px 20px;
             color: white;
+            padding: 40px 20px;
+
             background:
-                linear-gradient(rgba(15, 23, 42, .8), rgba(30, 41, 59, .85)),
-                url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1600&q=80")
+                linear-gradient(
+                    rgba(0, 45, 35, 0.65),
+                    rgba(0, 30, 25, 0.75)
+                ),
+                url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=85")
                 center/cover;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 30px;
         }
 
         .button {
             display: inline-block;
-            background: #3b82f6;
+            background: #35a66f;
             color: white;
-            padding: 13px 25px;
+            padding: 14px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
         }
 
         .button:hover {
-            background: #2563eb;
+            background: #278452;
         }
 
-        /* Sections */
+        /* GENERAL SECTIONS */
         section {
-            padding: 70px 8%;
+            padding: 75px 8%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            color: #12372a;
             margin-bottom: 15px;
-            color: #111827;
         }
 
         .section-description {
-            max-width: 750px;
-            margin: 0 auto 40px;
+            max-width: 800px;
+            margin: 0 auto 45px;
             text-align: center;
-            color: #555;
+            color: #52606d;
         }
 
-        /* Cards */
+        /* FACT CARDS */
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
 
         .card {
             background: white;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-            transition: transform .2s;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: 0.25s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
         }
 
         .card h3 {
-            color: #2563eb;
+            color: #19704b;
+            font-size: 1.35rem;
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: #555;
-        }
-
-        /* Facts */
-        .facts {
-            background: #111827;
+        /* STATS */
+        .stats {
+            background: #12372a;
             color: white;
         }
 
-        .facts .section-title {
+        .stats .section-title {
             color: white;
         }
 
-        .fact-box {
+        .stat-card {
+            background: #194b3a;
+            padding: 30px;
             text-align: center;
-            padding: 25px;
-            background: #1f2937;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
-        .fact-box strong {
+        .stat-number {
             display: block;
-            font-size: 2rem;
-            color: #60a5fa;
+            font-size: 2.6rem;
+            font-weight: bold;
+            color: #8ee3ad;
             margin-bottom: 8px;
         }
 
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #cbd5e1;
-            text-align: center;
-            padding: 30px;
+        /* FEATURED PLACES */
+        .place {
+            overflow: hidden;
+            padding: 0;
         }
 
-        /* Mobile */
+        .place-content {
+            padding: 25px;
+        }
+
+        .place h3 {
+            color: #12372a;
+            margin-bottom: 8px;
+        }
+
+        /* TIPS */
+        .tips {
+            background: #e3f1e9;
+        }
+
+        .tips ul {
+            max-width: 800px;
+            margin: auto;
+            list-style: none;
+        }
+
+        .tips li {
+            background: white;
+            margin: 12px 0;
+            padding: 18px 22px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .tips li::before {
+            content: "🎣 ";
+        }
+
+        /* WARNING */
+        .warning {
+            max-width: 850px;
+            margin: auto;
+            background: #fff7d6;
+            border-left: 6px solid #e0a800;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .warning h3 {
+            color: #765900;
+            margin-bottom: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b241b;
+            color: #d8e8df;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer a {
+            color: #8ee3ad;
+        }
+
+        /* MOBILE */
         @media (max-width: 700px) {
+
             nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
             }
 
             nav ul {
-                gap: 12px;
+                gap: 14px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
             .hero h1 {
-                font-size: 2.4rem;
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
             }
 
             section {
-                padding: 50px 6%;
+                padding: 55px 6%;
             }
         }
     </style>
@@ -206,149 +272,570 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">🚀 Explore Space</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">🎣 Utah Fishing Facts</div>
 
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#objects">Space Objects</a></li>
-            <li><a href="#facts">Facts</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#facts">Facts</a></li>
+        <li><a href="#fish">Fish</a></li>
+        <li><a href="#places">Places</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#rules">Rules</a></li>
+    </ul>
+</nav>
 
-    <!-- Hero -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Explore the Universe</h1>
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>Fishing in Utah</h1>
+
+        <p>
+            Discover Utah's lakes, reservoirs, rivers, fish species,
+            fishing records and tips for anglers of all experience levels.
+        </p>
+
+        <a href="#facts" class="button">
+            Explore Fishing Facts
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- INTRO -->
+<section id="facts">
+
+    <h2 class="section-title">
+        Fishing in Utah
+    </h2>
+
+    <p class="section-description">
+
+        Utah offers fishing opportunities throughout the year.
+        Anglers can fish in mountain streams, rivers, lakes,
+        reservoirs and community ponds across the state.
+
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>🏔️ Mountain Fishing</h3>
 
             <p>
-                Discover fascinating information about planets, stars,
-                galaxies, black holes, and the incredible universe around us.
+                Utah's mountains contain streams and lakes where anglers
+                can pursue trout and other fish in scenic surroundings.
             </p>
 
-            <a href="#about" class="button">Start Exploring</a>
         </div>
-    </header>
 
-    <!-- About -->
-    <section id="about">
-        <h2 class="section-title">What Is Space?</h2>
 
-        <p class="section-description">
-            Space is the vast region beyond Earth's atmosphere. It contains
-            planets, stars, galaxies, moons, asteroids, comets, and many
-            other objects. Scientists study space to better understand
-            the origins and evolution of our universe.
+        <div class="card">
+
+            <h3>🏜️ Desert Waters</h3>
+
+            <p>
+                Southern Utah offers a very different fishing environment,
+                including large reservoirs surrounded by red-rock scenery.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>❄️ Ice Fishing</h3>
+
+            <p>
+                During winter, some Utah anglers fish through the ice
+                on suitable frozen lakes and reservoirs.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎣 Year-Round Fishing</h3>
+
+            <p>
+                Utah DWR describes fishing in Utah as a year-round activity,
+                with opportunities varying by location and season.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <h2 class="section-title">
+        Quick Utah Fishing Facts
+    </h2>
+
+    <p class="section-description">
+        A few numbers and facts about fishing in the Beehive State.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="stat-card">
+            <span class="stat-number">8</span>
+            <p>Major planets? No — Utah has many different fish species!</p>
+        </div>
+
+
+        <div class="stat-card">
+            <span class="stat-number">12+</span>
+            <p>
+                Anglers age 12 and older generally need a Utah fishing license.
+            </p>
+        </div>
+
+
+        <div class="stat-card">
+            <span class="stat-number">2026</span>
+            <p>
+                Current Utah Fishing Guidebook edition.
+            </p>
+        </div>
+
+
+        <div class="stat-card">
+            <span class="stat-number">365</span>
+            <p>
+                Days of outdoor opportunities — depending on the water and rules.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FISH SPECIES -->
+<section id="fish">
+
+    <h2 class="section-title">
+        Fish You Can Find in Utah
+    </h2>
+
+    <p class="section-description">
+        Utah waters contain many different sportfish and native fish species.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>🌈 Rainbow Trout</h3>
+
+            <p>
+                Rainbow trout are a popular sportfish and are found in
+                many Utah fisheries.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐟 Cutthroat Trout</h3>
+
+            <p>
+                Cutthroat trout are especially important to Utah's
+                native fish heritage and include several subspecies.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐠 Brown Trout</h3>
+
+            <p>
+                Brown trout are another popular trout species found
+                in Utah waters.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐟 Kokanee Salmon</h3>
+
+            <p>
+                Kokanee salmon are a landlocked form of sockeye salmon
+                and are known for their striking appearance.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐡 Largemouth Bass</h3>
+
+            <p>
+                Largemouth bass are a popular warm-water sportfish
+                found in several Utah reservoirs.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐟 Smallmouth Bass</h3>
+
+            <p>
+                Smallmouth bass are known for their strong fights
+                and are pursued by anglers in Utah.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐟 Walleye</h3>
+
+            <p>
+                Walleye are found in several Utah fisheries and are
+                popular with anglers.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🐱 Channel Catfish</h3>
+
+            <p>
+                Channel catfish are another popular species and can
+                grow to impressive sizes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PLACES -->
+<section id="places">
+
+    <h2 class="section-title">
+        Popular Utah Fishing Waters
+    </h2>
+
+    <p class="section-description">
+        Utah has a wide variety of places to fish, from large reservoirs
+        to mountain streams.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card place">
+
+            <div class="place-content">
+
+                <h3>🏞️ Lake Powell</h3>
+
+                <p>
+                    Lake Powell is famous for its massive size, spectacular
+                    canyon scenery and variety of fishing opportunities.
+                    Utah's state-record striped bass was caught here.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card place">
+
+            <div class="place-content">
+
+                <h3>🎣 Flaming Gorge Reservoir</h3>
+
+                <p>
+                    Flaming Gorge is a major Utah fishing destination
+                    known for trout, kokanee salmon and other species.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card place">
+
+            <div class="place-content">
+
+                <h3>🏔️ Fish Lake</h3>
+
+                <p>
+                    Fish Lake is a well-known mountain fishing destination
+                    in central Utah.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card place">
+
+            <div class="place-content">
+
+                <h3>🌊 Utah Lake</h3>
+
+                <p>
+                    Utah Lake provides fishing opportunities near one of
+                    Utah's largest population centers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RECORDS -->
+<section>
+
+    <h2 class="section-title">
+        Utah Fishing Records
+    </h2>
+
+    <p class="section-description">
+        Utah maintains official records for fish caught using different
+        legal fishing methods.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>🏆 Striped Bass</h3>
+
+            <p>
+                Utah's catch-and-keep striped bass record is
+                <strong>48 lb 11 oz</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🏆 Largemouth Bass</h3>
+
+            <p>
+                Utah's catch-and-keep largemouth bass record is
+                <strong>10 lb 2 oz</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🏆 Smallmouth Bass</h3>
+
+            <p>
+                Utah's catch-and-keep smallmouth bass record is
+                <strong>7 lb 6 oz</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🏆 Bluegill</h3>
+
+            <p>
+                A Utah bluegill record of <strong>2 lb 8 oz</strong>
+                was established in 2024 at Quail Creek Reservoir.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BEGINNER TIPS -->
+<section id="tips" class="tips">
+
+    <h2 class="section-title">
+        Fishing Tips for Beginners
+    </h2>
+
+    <p class="section-description">
+        Getting started with fishing doesn't have to be complicated.
+    </p>
+
+
+    <ul>
+
+        <li>
+            Get the proper Utah fishing license if required for your age.
+        </li>
+
+        <li>
+            Check the regulations for the specific lake, river or reservoir
+            before fishing.
+        </li>
+
+        <li>
+            Bring appropriate tackle, bait or lures for the species
+            you are targeting.
+        </li>
+
+        <li>
+            Carry water, sunscreen, food and weather-appropriate clothing.
+        </li>
+
+        <li>
+            Handle fish carefully if you plan to release them.
+        </li>
+
+        <li>
+            Respect wildlife and leave the fishing area cleaner than
+            you found it.
+        </li>
+
+        <li>
+            Check current fishing conditions before leaving home.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- RULES -->
+<section id="rules">
+
+    <h2 class="section-title">
+        Know the Rules
+    </h2>
+
+    <div class="warning">
+
+        <h3>⚠️ Always Check Current Regulations</h3>
+
+        <p>
+            Utah fishing regulations can vary by species and by individual
+            waterbody. Daily limits, fishing methods and special regulations
+            can change.
+
+            The official Utah Fishing Guidebook is the best source to check
+            before your fishing trip.
         </p>
 
-        <div class="cards">
+        <br>
 
-            <div class="card">
-                <h3>🌌 Galaxies</h3>
-                <p>
-                    Galaxies are enormous collections of stars, gas, dust,
-                    and dark matter held together by gravity.
-                </p>
-            </div>
+        <a
+            href="https://wildlife.utah.gov/guidebooks"
+            target="_blank"
+            class="button"
+        >
+            View Utah Fishing Guidebook
+        </a>
 
-            <div class="card">
-                <h3>⭐ Stars</h3>
-                <p>
-                    Stars are massive balls of extremely hot plasma that
-                    produce energy through nuclear fusion.
-                </p>
-            </div>
+    </div>
 
-            <div class="card">
-                <h3>🪐 Planets</h3>
-                <p>
-                    Planets orbit stars and can have very different sizes,
-                    temperatures, atmospheres, and compositions.
-                </p>
-            </div>
+</section>
 
-        </div>
-    </section>
 
-    <!-- Space Objects -->
-    <section id="objects">
-        <h2 class="section-title">Amazing Objects in Space</h2>
+<!-- LICENSE -->
+<section>
 
-        <p class="section-description">
-            The universe contains objects that are both enormous and incredibly
-            strange. Here are a few of the most interesting.
-        </p>
+    <h2 class="section-title">
+        Fishing Licenses
+    </h2>
 
-        <div class="cards">
+    <p class="section-description">
 
-            <div class="card">
-                <h3>🕳️ Black Holes</h3>
-                <p>
-                    Black holes are regions of space where gravity is so strong
-                    that nothing, including light, can escape once it passes
-                    the event horizon.
-                </p>
-            </div>
+        Utah requires fishing licenses for anglers who meet the applicable
+        age requirements. According to Utah DWR, people under 12 can fish
+        without a fishing license, while anglers 12 and older generally
+        need one.
 
-            <div class="card">
-                <h3>☄️ Comets</h3>
-                <p>
-                    Comets are icy objects that travel through space. When they
-                    approach the Sun, they can develop glowing comas and tails.
-                </p>
-            </div>
+    </p>
 
-            <div class="card">
-                <h3>🌑 Moons</h3>
-                <p>
-                    Moons are natural satellites that orbit planets and other
-                    celestial bodies.
-                </p>
-            </div>
 
-        </div>
-    </section>
+    <div style="text-align:center;">
 
-    <!-- Facts -->
-    <section id="facts" class="facts">
+        <a
+            href="https://wildlife.utah.gov/licenses"
+            target="_blank"
+            class="button"
+        >
+            Check Utah License Information
+        </a>
 
-        <h2 class="section-title">Quick Space Facts</h2>
+    </div>
 
-        <p class="section-description">
-            Here are a few interesting facts to remember.
-        </p>
+</section>
 
-        <div class="cards">
 
-            <div class="fact-box">
-                <strong>8</strong>
-                <span>Planets orbit our Sun.</span>
-            </div>
+<!-- FOOTER -->
+<footer>
 
-            <div class="fact-box">
-                <strong>~4.6B</strong>
-                <span>Years old is our Solar System.</span>
-            </div>
+    <h3>🎣 Utah Fishing Facts</h3>
 
-            <div class="fact-box">
-                <strong>1</strong>
-                <span>Star is at the center of our Solar System.</span>
-            </div>
+    <p>
+        An informational website about fishing in Utah.
+    </p>
 
-            <div class="fact-box">
-                <strong>∞</strong>
-                <span>The universe contains an enormous number of objects.</span>
-            </div>
+    <br>
 
-        </div>
-    </section>
+    <p>
+        Information should be verified with the
+        <a
+            href="https://wildlife.utah.gov/"
+            target="_blank"
+        >
+            Utah Division of Wildlife Resources
+        </a>
+        before fishing.
+    </p>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Explore Space | Educational Website</p>
-        <p>Created with HTML & CSS</p>
-    </footer>
+    <br>
+
+    <p>
+        © 2026 Utah Fishing Facts
+    </p>
+
+</footer>
 
 </body>
 </html>
